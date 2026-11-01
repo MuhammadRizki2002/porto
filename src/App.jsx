@@ -203,8 +203,8 @@ function App() {
 
   return (
     <main className={isDarkMode ? 'dark-mode' : ''}>
-      <nav className="nav" aria-label="Navigasi utama"><button className="brand" type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}></button><div className={isMenuFloating ? 'nav-links floating' : 'nav-links'}>{[['top', t.nav[0]], ['skills', t.nav[1]], ['projects', t.nav[2]], ['work', t.nav[3]], ['cert', t.nav[4]]].map(([item, label]) => <button className={activeSection === item ? 'nav-link active' : 'nav-link'} key={item} type="button" onClick={() => navigateTo(item)}>{label}</button>)}{isMenuFloating && <button className="back-to-top" type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>}</div><div className="nav-actions">
-          <button className="theme-toggle" type="button" onClick={() => setLang(l => l === 'ID' ? 'EN' : 'ID')}>{lang}</button>
+      <nav className="nav" aria-label="Navigasi utama"><div className={isMenuFloating ? 'nav-links floating' : 'nav-links'}>{[['top', t.nav[0]], ['skills', t.nav[1]], ['projects', t.nav[2]], ['work', t.nav[3]], ['cert', t.nav[4]]].map(([item, label]) => <button className={activeSection === item ? 'nav-link active' : 'nav-link'} key={item} type="button" onClick={() => navigateTo(item)}>{label}</button>)}{isMenuFloating && <button className="back-to-top" type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>}</div><div className="nav-actions">
+          <button className="theme-toggle" type="button" onClick={() => setLang(l => l === 'ID' ? 'EN' : 'ID')} aria-label="Ganti bahasa" title="Ganti bahasa">{lang}</button>
           <button className="theme-toggle" type="button" onClick={() => setIsDarkMode((current) => !current)} aria-label={isDarkMode ? 'Aktifkan mode terang' : 'Aktifkan mode gelap'} title={isDarkMode ? 'Mode terang' : 'Mode gelap'}>{isDarkMode ? '☀' : '☾'}</button>
           <a className="nav-cta" href="mailto:hello@naya.design">{t.cta} <span>↗</span></a>
         </div></nav>
